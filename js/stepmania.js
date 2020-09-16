@@ -519,8 +519,7 @@ function touchCanvas(jq_event) {
 	var targetTouches = jq_event.originalEvent.targetTouches;
 	var targetWidth = jq_event.target.clientWidth / CANVAS_WIDTH;
 	var targetHeight = jq_event.target.clientHeight / CANVAS_HEIGHT;
-	var targetOffsetX =
-		Math.max(0, jq_event.target.clientWidth - window.screen.width) / 2;
+	var targetOffsetX = (jq_event.target.clientWidth - window.screen.width) / 2;
 	if (targetTouches) {
 		for (var i = 0; i < targetTouches.length; i++) {
 			actionCanvas(
@@ -530,8 +529,8 @@ function touchCanvas(jq_event) {
 		}
 	} else {
 		actionCanvas(
-			(jq_event.offsetX + targetOffsetX) / targetWidth,
-			jq_event.offsetY / targetHeight
+			(jq_event.clientX + targetOffsetX) / targetWidth,
+			jq_event.clientY / targetHeight
 		);
 	}
 	return !!$overlay;
@@ -813,7 +812,7 @@ function drawNoteField() {
 		var beatFraction = beat - Math.floor(beat);
 		var frameOffset = beatFraction * numNoteFrames;
 		var thisNoteFrameIndex =
-			col * numNoteFrames +
+			(col % 5) * numNoteFrames +
 			(Math.round(noteFrameIndex + frameOffset) % numNoteFrames);
 		var y = targetsY + beatUntilNote * arrowSpacing;
 		var alpha = 1;

@@ -100,7 +100,7 @@ function loadUcs(path, onUcsLoaded, ucsOffset) {
 				var splitLine = line.toLowerCase().split("=");
 				switch (splitLine[0]) {
 					case ":mode":
-						if (splitLine[1][0] === "D") {
+						if (splitLine[1][0] === "d") {
 							mode = "double";
 						} else {
 							mode = "single";
