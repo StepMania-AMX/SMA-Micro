@@ -12,7 +12,7 @@ Use the following URL structure:
 
 `https://stepmania-amx.github.io/micro/?<song-id>/<step-id>/<youtube-id>/<step-offset>`
 
-Example: https://stepmania-amx.github.io/micro/?505/S7_HARD/vdQzIuv_bKw/-0.34
+Example: https://stepmania-amx.github.io/micro/?505/S7_HARD/N606hkm4FkI/-0.77
 
 <details>
 <summary>Game Controls</summary>
